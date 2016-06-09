@@ -1,0 +1,69 @@
+[System]
+Name='GreenIntensity'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=25
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='queue'
+Range=[0 20]
+NumMFs=5
+MF1='VS':'trimf',[0 0 5]
+MF2='S':'trimf',[0 5 10]
+MF3='M':'trimf',[5 10 15]
+MF4='L':'trimf',[10 15 20]
+MF5='VL':'trimf',[15 20 20]
+
+[Input2]
+Name='rate'
+Range=[0 1]
+NumMFs=5
+MF1='VS':'trimf',[0 0 0.25]
+MF2='S':'trimf',[0 0.25 0.5]
+MF3='M':'trimf',[0.25 0.5 0.75]
+MF4='B':'trimf',[0.5 0.75 1]
+MF5='VB':'trimf',[0.75 1 1]
+
+[Output1]
+Name='TRgreen'
+Range=[0 5]
+NumMFs=5
+MF1='VS':'trimf',[0 0 1.25]
+MF2='S':'trimf',[0 1.25 2.5]
+MF3='M':'trimf',[1.25 2.5 3.75]
+MF4='H':'trimf',[2.5 3.75 5]
+MF5='VH':'trimf',[3.75 5 5]
+
+[Rules]
+1 1, 1 (1) : 1
+2 1, 1 (1) : 1
+3 1, 2 (1) : 1
+4 1, 3 (1) : 1
+5 1, 4 (1) : 1
+1 2, 1 (1) : 1
+2 2, 2 (1) : 1
+3 2, 2 (1) : 1
+4 2, 3 (1) : 1
+5 2, 4 (1) : 1
+1 3, 2 (1) : 1
+2 3, 2 (1) : 1
+3 3, 3 (1) : 1
+4 3, 4 (1) : 1
+5 3, 5 (1) : 1
+1 4, 3 (1) : 1
+2 4, 3 (1) : 1
+3 4, 4 (1) : 1
+4 4, 4 (1) : 1
+5 4, 5 (1) : 1
+1 5, 3 (1) : 1
+2 5, 4 (1) : 1
+3 5, 4 (1) : 1
+4 5, 5 (1) : 1
+5 5, 5 (1) : 1
