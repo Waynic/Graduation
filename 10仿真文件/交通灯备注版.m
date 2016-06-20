@@ -22,7 +22,7 @@ phaseD = 4;
 queue = ones(8,1);
 // 产生8行1列全1矩阵
 period = 4;
-// 每相位开始损失的时间是4s
+// 时间间隔是4s，4s判断一次是否切换相位
 min_green = 8;
 // 最小绿灯时长为8s
 max_green = 40;
