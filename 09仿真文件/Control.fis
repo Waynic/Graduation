@@ -1,0 +1,66 @@
+[System]
+Name='Control'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=25
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='TRgreen'
+Range=[0 5]
+NumMFs=5
+MF1='VS':'trimf',[0 0 1.25]
+MF2='S':'trimf',[0 1.25 2.5]
+MF3='M':'trimf',[1.25 2.5 3.75]
+MF4='H':'trimf',[2.5 3.75 5]
+MF5='VH':'trimf',[3.75 5 5]
+
+[Input2]
+Name='TRred'
+Range=[0 5]
+NumMFs=5
+MF1='VS':'trimf',[0 0 1.25]
+MF2='S':'trimf',[0 1.25 2.5]
+MF3='M':'trimf',[1.25 2.5 3.75]
+MF4='H':'trimf',[2.5 3.75 5]
+MF5='VH':'trimf',[3.75 5 5]
+
+[Output1]
+Name='control'
+Range=[0 1]
+NumMFs=2
+MF1='N':'trimf',[0 0 1]
+MF2='Y':'trimf',[0 1 1]
+
+[Rules]
+1 1, 2 (1) : 1
+1 2, 2 (1) : 1
+1 3, 2 (1) : 1
+1 4, 2 (1) : 1
+1 1, 2 (1) : 1
+2 1, 1 (1) : 1
+2 2, 2 (1) : 1
+2 3, 2 (1) : 1
+2 3, 2 (1) : 1
+2 3, 2 (1) : 1
+3 1, 1 (1) : 1
+3 2, 1 (1) : 1
+3 3, 2 (1) : 1
+3 4, 2 (1) : 1
+3 5, 2 (1) : 1
+4 1, 1 (1) : 1
+4 2, 1 (1) : 1
+4 3, 1 (1) : 1
+4 4, 2 (1) : 1
+4 5, 2 (1) : 1
+5 1, 1 (1) : 1
+5 2, 1 (1) : 1
+5 3, 1 (1) : 1
+5 4, 1 (1) : 1
+5 5, 2 (1) : 1
