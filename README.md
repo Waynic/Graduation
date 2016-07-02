@@ -1,2 +1,2 @@
 ## Graduation
-About my graduation project
+About my graduation project.
